@@ -1,0 +1,28 @@
+2. Iterative Statement :- 
+---------------------------------------
+if we want to execute a group of statement in multiple times then we should go for looping statement
+
+There are two types of loop in python
+
+1.for
+2.while
+
+
+for:- If we want to excute some action for every element present in some sequence like container[list,tuple,set,fzset,string etc] then we should go for for loops.
+
+
+syntax:
+
+for var in container:
+	statement
+
+
+ex:-
+
+for i in data:
+    result = i+100
+    print(result)
+
+
+
+

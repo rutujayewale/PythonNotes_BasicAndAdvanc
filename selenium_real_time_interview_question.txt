@@ -1,0 +1,52 @@
+6Selenium Interview Questions:-
+--------------------------------
+
+1. Write Selenium Xpath
+	> Absolute and Relative 
+		> Ansolute
+
+		https://www.decathlon.in/search?query=tshirt - green check box (without use indexing) l1/l2
+
+2.How many locaters in selenium, explain about it. l1/l2
+
+3.Explain About selenium wait. l1/l2
+
+4. How to do static dropdown? l1
+
+5. How you identify auto suggestive drop down. l2
+
+6. How to click snap shot in selenium. l1
+
+7. are you handel any alret,pop up or captcha? l2
+
+8. Selenium Component? l2
+
+9. What is selenium webdriver, expalin about yout tought. l1/l2
+
+10. How can we get text of a web element? l1
+
+11.what are the differenet way of selecting the values in dropdown? l1
+
+13. deiver.quiet vs driver.close() l1
+
+14.how to do handel multuple window? l1/l2
+
+15. findelement vs findelements? l2----------------------https://www.browserstack.com/guide/findelement-in-selenium
+
+16. What Action class in selenium? l1
+
+17. what are switch class in selenium? l1
+
+18. A--->  B----> C  ----> A iframe l2/l1
+
+19.driver.refersh() vs driver.back() vs driver.forward() l1
+
+20. What is selenium navigation/navigate , explain about it. l2
+
+21. css_seletor nth -child? l1
+
+22. link text vs partial text l1
+
+Selenium notes python files:-
+----------------------------
+https://github.com/ChandraSekharNayak-AT-Py/SeleniumAutomationPythonFiles.git

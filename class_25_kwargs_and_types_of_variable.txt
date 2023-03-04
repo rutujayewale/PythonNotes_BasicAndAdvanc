@@ -1,0 +1,110 @@
+Keyword Variable length Of arguments:-
+------------------------------------
+
+When we pass both key and value in a nth parameter,We will use Keyword Variable length Of arguments.
+
+we can declare a keyword variable length of arguments with the help (**) symbol.
+
+def func_name(**n):
+
+variable length :- *args
+keyword V  L    :- **kwargs
+
+we can call this function by passing any number of keyword arguments.
+Note:- Internally all these values represented in the form of dictionary.
+
+ex:-
+d = {"Name":"Rutuja","Address":"Pune"}
+
+for i,j in d.items():
+    print(i,j)
+
+ex:-
+
+def display(**kwargs):
+    for k,v in kwargs.items():
+        print(k,':',v)
+
+display(Name = 'Rutuja', Address= 'Pune', Batch = 'T_39',sis_name= 'Rutuja')
+
+ans:-
+
+Name : Rutuja
+Address : Pune
+Batch : T_39
+sis_name : Rutuja
+
+
+
+Types of variables:-
+------------------
+
+Python supports 2 types of Variable
+
+1.Global Variable
+2.Local Variable
+
+
+1.Global Variable:-
+
+The variable which are declraed outside of the function are called global variable, These variable can be accessed in inside the func and out side of the function
+
+a = 10 # global var
+def scodeen():
+    b = 20 #local variable
+    c = 30
+    result = (b+c)-a
+    return result
+
+Local variable:-
+--------
+
+The variable which are declared inside a function called local variable. It's only avialable for this function
+
+
+a = 10 # global var
+def scodeen():
+    b = 20 #local variable
+    c = 30
+    result = (b+c)-a
+    return result
+
+def Test():
+
+    result = a+b
+    return result
+
+print('scodeen data',scodeen())
+print('Test data',Test())
+
+
+How to convert Local Variable to Global Variable:-
+------------------------------------------------
+
+global keyword
+
+1. To declare global variable inside function 
+2. To make global variable avialable to the function so that we can perform required modification.
+
+
+a = 10 # global var
+def scodeen():
+    global b  (using global keyword convert local to global)
+    b = 20 #local variable
+    c = 30
+    result = (b+c)-a
+    return result
+
+def Test():
+
+    result = a+b
+    return result
+
+print('scodeen data',scodeen())
+print('Test data',Test())
+
+ans:-
+
+scodeen data 40
+Test data 30
+

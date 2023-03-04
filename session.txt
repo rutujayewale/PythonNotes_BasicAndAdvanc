@@ -1,0 +1,18 @@
+Quite = all browser
+close = only one at a time
+SDLC
+Vmodel
+waterfall model
+sql
+unix
+etl theory
+sql theory
+manual basic
+constrain
+join
+sp
+views
+
+
+
+

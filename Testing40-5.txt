@@ -1,0 +1,920 @@
+--CLASS-1
+--SQL - Structure Query Language 
+--PLSQL - Programming language SQL.
+
+--Q.What is data?
+--Collection of meanigful information.
+--OR
+--Collection Record information.
+
+--Q.What is database?
+--It is collection of data in file format.
+--For Ex: Word ,Excel,text file etc.
+
+--disadvantages 
+--It stores very less amount of data.
+--Data Accessibility is slower.
+--No relationship between two files.
+
+
+--Q.What is RDBMS(Relational Database Management system)? 
+--It is collection of table related information or structure data information.
+--It stores huge amount of data and to extract data stored in RDBMS we have a simple langugae i.e SQL.
+--There is relation between two or more tables.
+
+--Q.what is structred data?
+--Data which is stored in table or tabular format.
+--Table is collection of rows and columns.
+
+--Different flavour of RDBMS.
+--1.SQL Server - Microsoft
+--2.SQL developer
+--3.TOAD
+--4.Teradat
+--5.DB2
+--6.Postgrey SQL
+--7.MySql etc 
+
+--There are two types of databases 
+--1.System defined databases.
+--2.User defined databse/Database Snapshots. 
+
+--There are four types of system defined DB.
+--1.master - by default DB of RDBMS
+--2.model
+--3.msdb
+--4.tempdb
+
+--SQL is not case sensitive language.
+--ex: Menaing of SCODEEN is same as scodeen.
+
+--colurs
+--Blue - system defined keywords.
+table,select,create etc.
+--Pink - system defined function.
+SUM,avg,min, max etc.
+
+--Q.How to create database?
+
+--synatx: CREATE DATABASE User_defined_name
+
+CREATE DATABASE Testing40;
+
+--Q.How to execute SQL statement?
+--1.By using excute tab from top bar.
+--2.By pressing F5 key from keyboard.
+
+--Q.How to navigate or access user defined database?
+--synatx: USE User_Defined_Database_Name
+
+USE Testing40
+
+--Comments 
+--Two types of comments
+--1.Single line comments (--)
+--2.multiple line comments(/*  multiple statements */)
+
+--for ex
+--1.
+--My name is SQL
+--CLASS-2
+
+--2.
+/*My name is sql
+SQl is used to operate RDBMS/database data
+by using SQL we can acces data stored in database within fraction of second */
+
+
+--CLASS -2 
+--Data Type 
+--Type of data / value of an object can hold is known as data type 
+--Diffrent types of data types in SQL 
+--1.String or charecter data type.
+--2.Numeric data type
+--3.Approximate numeric data type
+--4.Data and time data type.
+
+--1.String or charecter data type.
+--1.char
+--It supports A-Z,a-z,0-9 and special charecters (@,#,$,%,&,* etc)
+--It is static memory allocation and its maximum size is 8000 charecters.
+
+--For Ex: First_Name char(10)
+--		  It Blocks or cease 10 blocks of memeory suppose if we store 'AMAR' then it requires 4 blocks of memory 
+--		  but it blocks complete 10 blocks os that 6 blocks is wastage.
+
+declare @val char(100)
+set @val = 'AMAR@123'
+print @val
+print datalength(@val)
+print len(@val)
+
+--2.varchar
+--It supports A-Z,a-z,0-9 and special charecters (@,#,$,%,&,* etc)
+--It is dynamic memory allocation and its maximum size is 8000 charecters.
+
+--For Ex: First_Name char(10)
+--		  It Blocks or cease 10 blocks of memeory suppose if we store 'AMAR' then it requires 4 blocks of memory 
+--		  but it blocks only 4 blocks of memory instead of 10 blocks.
+
+declare @val1 varchar(100)
+set @val1 = 'AMAR@123'
+print @val1
+print datalength(@val1)
+print len(@val1)
+
+--3.nChar
+--It supports A-Z,a-z,0-9 and special charecters (@,#,$,%,&,* etc)
+--It is static memory allocation and its maximum size is 4000 charecters.
+--to store 1 character it uses 2 blocks of memory.
+
+declare @a char(100)
+set @a = 'AMAR@123'
+print @a
+print datalength(@a);
+
+declare @val2 nchar(100)
+set @val2 = 'AMAR@123'
+print @val2
+print datalength(@val2);
+
+
+--4.nChar
+--It supports A-Z,a-z,0-9 and special charecters (@,#,$,%,&,* etc)
+--It is dynamic memory allocation and its maximum size is 4000 charecters.
+--to store 1 character it uses 2 blocks of memory.
+
+declare @c varchar(100)
+set @c = 'AMAR@123'
+print @c
+print datalength(@c);
+
+declare @d nVarchar(100)
+set @d = 'AMAR@123'
+print @d
+print datalength(@d);
+
+
+--Q.What is the diffrence between char and varchar?
+--Q.What is the diffrence between char and nchar?
+--Q.What is the diffrence between varchar and nvarchar?
+--Q.What is the diffrence between nchar and nvarchar?
+
+--Class -3 
+--2.Numeric data type 
+--1.TINYINT
+--It will store value ranging from 0 to 255.
+
+--128 64 32 16 8 4 2 1 --255
+--1	   1  1  1 1 1 1 1 
+
+declare @number tinyint
+set @number = 255
+print @number 
+
+--2.SMALLINT
+--It will store value ranging from -32768 to 32767.
+
+declare @numbers smallint
+set @numbers = -32768
+print @numbers 
+
+--3.Decimal
+--An exact fixed point number 
+
+declare @NO decimal
+set @NO = 234123456789.234567890
+Print @NO
+
+--4.INT
+--It will store an integer number which is ranging from -2147483648 to 2147483647.
+
+declare @G int
+set @G = 2147483647
+print @G
+
+--3.Approximate numeric data type 
+--1.Float 
+--It will store floating point number ranging from -1.8 E to 37 to 1.8 E to 37.
+
+--for ex: 2345678.234567
+
+declare @F float
+set @F = 13456.78123456789123456781234567891234
+print @F
+
+
+--4.Date and Time data Type
+--1.Date
+--If we want to store or insert date in multiple formats then we can use date date type
+--for ex: DD/MM/YYYY,MM/DD/YYYY,YYYY/MM?DD etc.
+
+select GETDATE() --Todays date and time 
+
+declare @todaysdate date 
+set @todaysdate = '2022-09-14 07:22:23.380'
+print @todaysdate
+
+--2.time 
+--It will allow you to insert or display time format like HH:MM:SS.MIS.
+
+declare @exacttime time 
+set @exacttime = '2022-09-14 07:22:23.380'
+print @exacttime
+
+--3.datetime 
+--It will combine date and time, format like Month date Year Hour:Minutes AM/PM 
+select GETDATE()
+declare @time time
+set @time = GETDATE()
+print @time 
+
+declare @Scodeen datetime
+set @Scodeen = '2022-09-14 07:30:38.823'
+print @Scodeen 
+
+--Q.How to create table ?
+--syntax : CREATE TABLE TABLE_NAME (Col1 DATA TYPE, COL12 DAT TYPE .... COLn DATA TYPE )
+
+CREATE TABLE STUDENT (S_ID smallint ,FIRSTNAME varchar(50),LASTNAME varchar(30),CITY varchar(50))
+
+--Q.HOW to SELECT TABLE?
+
+SELECT * from STUDENT
+
+--Star(*) -- It indicates All the columns from table.
+
+--If we want to display specific columns from table then we need to specify particular names in select list.
+
+select S_ID,FIRSTNAME from STUDENT
+
+--CLASS-4 
+--How to insert data into table?
+--By using two methods we can insert data 
+--METHOD-I
+--It will allow you to insert data into table as per column sequence defined while creating a table.
+
+--synatx : INSERT INTO TABLE_NAME values (Col1,col2,clo3,...col4)
+
+--If you miss the column sequence and number of columns then it will through an exception/error.
+--String values always enclosed in single quotes.
+CREATE TABLE STUDENT (S_ID smallint ,FIRSTNAME varchar(50),LASTNAME varchar(30),CITY varchar(50))
+
+insert into STUDENT values (1,'Sumit','Patil','PUNE')
+insert into STUDENT values (2,'Amit','Jadhav','Mumbai')
+insert into STUDENT values (3,'Rohit','Mane','Satara')
+
+insert into STUDENT values (4,'Akash','Shinde','Wardha'),(5,'Sunil','More','Latur'),
+(6,'Dilip','Dadape','Sangli')
+
+insert into STUDENT values (7,'Anil','Patil')
+insert into STUDENT values ('Anil','Patil',8)
+--the above two statement shows an below error
+--error : Column name or number of supplied values does not match table definition.
+
+insert into STUDENT values (7,'Anil','Patil','')
+
+select * from STUDENT
+--NOTE: In Method-I
+--While inserting value to columns and supplied ''(blank space) then  
+--it will insert by default values w.r.to data type
+--INT - 0(ZERO)
+--Varchar - Blank space
+--Date - 1900-01-01
+--Datetime - 1900-01-01 00.00.00.000
+
+insert into STUDENT values ('','','','')
+create table employee (EID int,EMP_NAME varchar(50),EMP_DEPT varchar(20),EMP_DOJ date,salary int)
+insert into employee values ('','','','','') --(0,'','',1900-01-01,0)
+
+select * from employee
+--METHOD-II
+--In this method , It will allow us to insert column values as per your choice  but condition is that 
+--we must follow the user defined sequence into insert statement.
+
+syntax : insert into TABLE_NAME (col4,col1,col2...coln) values (col4,col1,col2...coln)
+
+create table employee (EID int,EMP_NAME varchar(50),EMP_DEPT varchar(20),EMP_DOJ date,salary int)
+
+insert into employee (EID,EMP_NAME,salary) values (1,'Praveen',20000)
+
+insert into employee (EMP_NAME,salary,EID,EMP_DEPT) values ('Suman',30000,2,'HR')
+
+insert into employee (EID,EMP_NAME,salary,EMP_DEPT) values (3,'Amit',25000,'') 
+
+insert into employee (EID,EMP_NAME,salary,EMP_DEPT,EMP_DOJ) values (4,'Rohan',27000,'Admin','2022-01-15') 
+
+insert into employee (EMP_NAME,salary,EMP_DEPT,EMP_DOJ) values ('Shina',22000,'HR',GETDATE()) 
+
+select GETDATE()
+select * from employee
+
+--NOTE: In Method-II , if we are not supplying any columns from  table in insert statement then for that
+--		particular column it will insert 'NULL' Value by default.
+
+--SQL Statements
+--1.DML (Data Manipulation Language) -- S_UID
+--These statements are used to play with table data or data stored in a table.
+--SELECT,INSERT,UPDATE,DELETE 
+
+--2.DDL (Data Defination Language)
+--3.DCL (Data Control Language)
+--4.TCL (Transaction Control Language)
+
+
+--CLASS-5
+--1.DML (Data Manipulation Language) -- S_UID
+--These statements are used to play with table data or data stored in a table.
+--SELECT,INSERT,UPDATE,DELETE 
+
+--SELECT 
+--This statement is used to SELECT any data whether it is string or number and if we are selecting
+--data from table then it will allow us to select all the table data as well some specific column data.
+--SELECT is used to exatrct selected value/strings/columns.
+
+--synatx : SELECT string/number
+--		   SELECT * from TABLE_NAME -- * indicates all the columns
+--		   SELECT col1,col2,...coln from TABLE_NAME
+
+SELECT 8888
+
+select 'SCODEEN GLOBAL'
+
+select * from employee
+
+--If Employee Table is having 7 records then what will be the output of Below query?
+select 'SCODEEN' from employee
+
+--INSERT
+--This statement is used to insert records into the tables,views and temporray recults.
+
+--UPDATE
+--Update Statement is used to update existing records from table.
+--While updating columns , if you have not specified condition then it will modify/update complete column.
+
+--syntax :
+--UPDATE TABLE_NAME SET COLUMN_NAME = 'Value'
+--WHERE Specific_Column = 'Value'
+--SINGLE COLUMN UPDATE
+--if condition is not specified then complete column will be updated with the same value 
+update employee SET EMP_DEPT = 'Finance'
+
+--If we provide condition in update statement then it will update only that area or part
+update employee SET EMP_DEPT = 'HR' where EID = 1
+
+--MULTIPLE COLUMN UPDATE
+--If we want to update department as well it DOJ then 
+update employee SET EMP_DEPT = 'Admin', EMP_DOJ ='2019-03-15' where EID = 2
+
+--DELETE
+--DELETE statement is used to delete rows from a table.
+--DELETE statement delete records/rows from table ROW-by-ROW.
+--DELETE statement will not delete structure of table.
+--In DELETE statement,if we have not specified any condition then it will delete complete data from table.
+
+synatx:
+--DELETE FROM Table_Name
+--WHERE Specific_column = 'Value'
+
+--It will delete data from complete table
+DELETE FROM employee
+
+insert into employee (EID,EMP_NAME,salary) values (1,'Praveen',20000)
+insert into employee (EID,EMP_NAME,salary,EMP_DEPT,EMP_DOJ) values (2,'Praveen',20000,'HR','2016-09-13')
+
+--It will DELETE data from specific row of table
+DELETE FROM employee where EID =4
+DELETE FROM employee where EMP_DEPT = 'HR'
+DELETE FROM employee where EMP_NAME ='shina'
+
+select * from employee
+
+--2.DDL Statements - DR.CAT
+--These statements are used to play with table columns or table structure.
+--Always alon with DDL statements we need to use TABLE keyword 
+--CREATE,TRUNCATE,DROP,ALTER,RENAME
+
+--CREATE 
+--By using create statement we can create Database,Table,Views,StoreProcedure,Index,Triggers etc.
+
+--syntax : CREATE DATABASE DATABASE_NAME
+--	     : CREATE TABLE TABLE_NAME
+
+--Truncate
+--It will allow us to delete records from table at once.
+--Truncate Satement will not allow to delete table structure.
+--It will not allow us to delete records from a tbale Row-by-Row , it means we cant specify a condition or filter.
+
+--syntax : Truncate Table Table_Name 
+select * from employee
+
+truncate table employee 
+
+--DROP
+--DROP Statement will allow us to delete struture of the table along with data stored in table.
+--DROP statemnt is also used to DELETE database.
+
+--synatx:
+--DROP TABLE Table_Name 
+--DROP DATABASE DATABASE_NAME 
+
+select * from employee
+
+DROP table employee
+
+
+create database sampletest
+
+drop database sampletest 
+
+
+--Q.What is the diffrence between delete,drop and truncate?
+
+--CLASS-6
+--ALTER
+--By using this statements , we can manipulate/play with table columns/attributes/fields.
+--by using ALTER function, we can perform multiple operation.
+
+--1.We can ADD one or more columns at a time into existing table.
+--2.We can DELETE one or more columns at a time from existing table.
+--3.We can increase or decrease size of existing columns inside a table.
+--4.We can change data type of column.
+
+--1.We can ADD one or more columns at a time into existing table.
+--Syntax: ALTER TABLE TABLE_NAME ADD Col1 DATATYPE ,Col2 DATATYPE.....Coln DataType
+
+create table orders(OID int, Product varchar(20))
+
+insert into orders values (1,'Mobiles')
+
+select * from orders
+--Adding a single column into a table.
+alter table orders add Brand varchar(20)
+
+--Adding multiple columns into table 
+alter table orders add Manfacture_country varchar(20),Manfacture_Year int
+
+--NOTE: whenever we add new column to existing table by using alter statement then it will insert bydefault 
+--		NULL value to column. 
+select * from orders
+
+update orders set brand = 'NOKIA',Manfacture_country ='Finland',Manfacture_Year = 2020
+
+
+--2.We can DELETE one or more columns at a time from existing table.
+--Syntax : ALTER TABLE TABLE_NAME DROP COLUMN col_name1,Col_name2,.....col_namen
+select * from orders
+
+--Deleting single column from table 
+Alter table orders drop column Manfacture_Year
+
+--Deleting multiple columns from table
+alter table orders drop column Manfacture_Country,barnd
+
+--3.We can increase or decrease size of existing columns inside a table.
+--synatx: ALTER TABLE Table_Name ALTER COLUMN Column_Name DataType [(SIZE)] 
+
+select * from orders
+--Intel Windows Laptop - 11th generation i5 processor , 256SSSID,*GB RAM 
+
+insert into orders values(2,'Laptop - 11th generation i5 processor','INTEL') 
+
+--To view a complete struture of table then we use below SQL query
+SP_HELP orders
+
+--Incresing  data type size of column
+alter table orders alter column product varchar(50)
+
+--decrease size of column
+alter table orders alter column product varchar(30)
+
+--NOTE: If you are trying to decrease size of column less than the length of data stored or inserted 
+--		into that column then it will through an exception;
+
+--exception/error : String or binary data would be truncated in table 'Testing40.dbo.orders', 
+--					column 'Product'. Truncated value: ''.
+
+--4.We can change data type of column.
+--while chnaging the data type of any column from existing table 
+--then we need to aware about that particular column is inserrtted what type of data.
+
+select * from orders
+
+SP_HELP orders
+
+syntax : alter table Table_name alter column column_name Data_type
+
+alter table orders alter column OID varchar(20)
+
+insert into orders values(334,'Smart Watch','IOS7') 
+select * from orders
+
+alter table orders alter column OID tinyint --(0 to 255)
+--error : The conversion of the varchar value '334' overflowed an INT1 column. Use a larger integer column.
+
+--CLASS-7
+--Rename
+--In SSMS or SQL server , We have in built store Procedure to rename columns from table 
+--and table names from database.
+
+--Inside SSMS or SQL server, We don't have any system defined keyword like RENAME.
+
+--If we work with Oracle - SQL developer and Teradata RDBMS then in that we have statement like RENAME.
+
+--while changing column name it will give warning saying that
+--Caution: Changing any part of an object name could break scripts and stored procedures.
+
+select * from STUDENT
+
+--To rename columns from table
+--synatx:
+--SP_RENAME 'TABLE_NAME.COLUMN_NAME(OLD)','COLUMN_NAME(NEW)'
+
+SP_RENAME 'STUDENT.CITY','LOCATION'
+
+--To Rename Tables in database
+syntax:
+--SP_RENAME 'DATABASE_NAME.DBO.TABLE_NAME(OLD)','TABLE_NAME(NEW)'
+
+SP_RENAME 'TESTING40.DBO.Orders' , 'Order_Details'
+
+
+
+--Information_schema
+
+--Data Base Schema : it is Structure of database described by database management system.
+--Schema refers to organization data , in which it defines how database is constructed.
+
+--By using INFORMATION_SCHEMA , we will identify 
+--How many tables are created in aparticular database.
+
+select * from INFORMATION_SCHEMA.TABLES 
+
+--How many columns are their in particular table
+
+select * from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'STUDENT' 
+
+--By uisng INFORMATION_SCHEMA we can count number of columns present in particular table.
+
+select COUNT(*) from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'STUDENT' 
+
+--We can identify ordinal position(Sequence) of each column defined in a table.
+
+select COLUMN_NAME,ORDINAL_POSITION from INFORMATION_SCHEMA.COLUMNS where TABLE_NAME = 'STUDENT'
+
+
+--SQL Clause and OPerator
+--Clauses:
+--Clauses are used to filter data by providing condition
+--Clauses are used for filtering purposes.
+--Whenver we want to use clauses then we can use along with SQL opeartor.
+
+--There are various types of Clauses inside SQL
+--1.WHERE
+--2.ORDER BY
+--3.GROUP BY
+--4.HAVING
+
+--1.WHERE
+--Where clause is used along with SQL opeartor like Comaprision,logical, arithmatic etc 
+--WHERE Clause is used for filter records from Table
+
+--syntax:
+--SELECT col1col2,...From Table_Name where Condition
+
+--NOTE: Where clause is not only used in SELECT statements . it is also used in UPDATE , DELETE statements etc.
+
+select * from Order_Details where OID = 1
+
+--2.ORDER BY 
+--It is used to display the content of column either in ascending or decending order.
+--If you have not defined anathing after ORDER BY Clause then it will be by default Ascending.
+--It will use notation for Ascending - ASC and for Decending - DESC.
+
+--Synatx :
+--SELECT Col1,col2,...Coln from Table_Name Order By Col1,COL2...Coln ASC/DESC
+
+select * from STUDENT order by FIRSTNAME 
+
+select * from STUDENT order by FIRSTNAME ASC
+ 
+select * from STUDENT order by FIRSTNAME DESC
+
+select * from STUDENT order by S_ID DESC,FIRSTNAME DESC
+
+insert into STUDENT values (6,'Arun','Bhosale','Satara')
+
+--SQL Opeartor 
+--There are various types of SQL opeartor
+--1.Comparision
+--2.Logical.
+--3.Arithmatic
+--4.IN and NOT IN
+--5.BETWEEN and NOT BETWEEN
+--6.LIKE 
+
+--1.Comparision
+--These opeartors are used to compare condition provided inside WHERE Clause.
+-- = : equal to
+-- > : Grater than
+-- < : less than
+-- >= : greater than equal to
+-- <= : less than equal to
+-- <> or != : not euual to
+
+select * from STUDENT
+
+--If we want to display only student info whose id is 3
+select * from STUDENT where S_ID =3
+
+select * from STUDENT where S_ID > 3
+
+select * from STUDENT where S_ID < 3
+
+select * from STUDENT where S_ID >= 3
+
+select * from STUDENT where S_ID <= 3
+
+select * from STUDENT where S_ID !=  3
+
+select * from STUDENT where S_ID <> 3
+
+--CLASS-8
+--2.Logical Operator
+--It is used to compare two inputs based upon the operation specified into where clause
+--1.AND
+--2.OR
+--3.NOT
+
+--1.AND
+--It compares two columns row wise in a table.
+--if two inputs match in same row then it will show the records in output otherwise it will be blank.
+--It is just multiplication type of operation.
+
+--AND opration
+--A			B			O/P
+--Match		Match		Display Record
+--Unmatch	Match		Display Blank
+--Match		Unmatch		Display Blank
+--Unmatch	Unmatch		Display Blank
+
+select * from STUDENT where FIRSTNAME = 'Sumit' and location = 'PUNE'
+
+select * from STUDENT where FIRSTNAME = 'Sumit' and location = 'Latur'
+
+--2.OR
+--It compares two columns in table row wise but here if both the input matches and either of the input match
+--in a row of table then it will display that record from table.
+--It will act as addition operation.
+
+--OR Opeartion
+--A			B			O/P
+--Match		Match		Display Record
+--Unmatch	Match		Display Record
+--Match		Unmatch		Display Record
+--Unmatch	Unmatch		Display Blank
+
+select * from STUDENT where FIRSTNAME = 'Sumit' OR location = 'PUNE'
+
+select * from STUDENT where FIRSTNAME = 'Sumit' OR location = 'Latur'
+
+select * from STUDENT where FIRSTNAME = 'Kate' OR location = 'London'
+
+--3.NOT
+--This operator will perform negation operation .
+--It means it will perform opposite operation.
+
+--NOT Opeartion
+ --INPUT			OUTPUT
+--TRUE				FALSE
+
+select * from STUDENT where Not FIRSTName = 'Sumit'
+
+select * from STUDENT where Not S_ID = 7
+
+--SQL Alias
+--By using alias in SQL we can specify user defined names to column.
+
+--synatx:
+--select Column_Name as UserdefinedName from Table_Name
+--select Column_Name UserdefinedName from Table_Name
+--select UserdefinedName = Column_Name  from Table_Name
+
+select *,LOCATION as CITY from STUDENT
+select *,LOCATION  CITY from STUDENT
+select *,CITY = LOCATION   from STUDENT
+
+--3.arithmatic opeartor
+--It is used to perform arithmatic opeartion like addition,substraction,multiplication,divisison etc.
+--We have multiple opeartor in SQL i.e. +,-,*,/,% etc.
+
+create table EMPLOYEE(EID int , EMP_NAME varchar(20),DEPT varchar(10),Salary int)
+
+insert into EMPLOYEE values(1,'Arun','Testing',4000),(2,'Varun','Dev',3000),(3,'Sohan','ML',5000),
+(4,'Mohan','AI',7000),(5,'Sikhar','Testing',4500),(6,'Amit','Dev',7600),(7,'Rohit','ML',9000)
+,(8,'Sumit','AI',8000),(9,'Meena','DS',9500),(10,'Shital','Testing',7800)
+
+select * from EMPLOYEE
+
+select *,Salary_Increment = Salary + 1000 from EMPLOYEE
+
+--Q.What will be annual_package for all the employess?
+select *,annual_package = Salary * 12 from EMPLOYEE
+
+--Q.Display per_day_earnings of all employess.
+select *,per_day_earnings = Salary/30 from EMPLOYEE
+
+--Q.Decrese salry of all the employess by 500?
+select *,Salary_Decrease = Salary - 500 from EMPLOYEE
+
+--Display even records from table?
+select * from EMPLOYEE where EID %2=0
+--Display Odd records from table?
+select * from EMPLOYEE where EID %2=1
+
+--CLASS-9
+--IN and NOT IN 
+--In operator will allow you to insert or point out values specified into the list.
+--NOT IN opeartor will perform reversen or opposite as compare to IN.
+
+
+select * from EMPLOYEE where EID not in (1 ,5 ,7)
+
+select * from EMPLOYEE where EMP_NAME in ('Mohan' ,'Shital' ,'Sohan')
+
+
+--Between and NOT BETWEEN
+--This operator or clause will allow you to display values or records between range specified.
+--This opeartor will work along with LLogical opeartor.
+
+--Syntax: 
+select * from EMPLOYEE where EID not between 4 and 6
+
+
+--6.LIKE
+--LIKE opeartor will allow you to search pattern from givin string or number.
+--Like mostly used with WHERE Clause.
+
+
+--LIKE opeerator used with following wildcards for searching pattern
+--1. '%' - It represents one or multiple charecters.
+--2. '_'-- It represents one or more charecter / Substitute for exactly one charecter.
+--3.[charlist] -- A single charecter from from that list from start.
+--4.[^Chalist] or [!charlist] = No single charecter not in the list.
+
+--'A%'--start with A charecter and it will display all the values.
+--'%A --ENDs with A charecter and it will display all the values.
+--'%A%' -- Anywhere inside record or column if 'A' is present.
+
+select * from EMPLOYEE where EMP_NAME like '40%'
+
+select * from EMPLOYEE where EMP_NAME like '%A'
+
+select * from EMPLOYEE where EMP_NAME like '%A%'
+
+select * from EMPLOYEE where EMP_NAME like '%it'
+
+select * from EMPLOYEE where EMP_NAME like '[ABC]%'
+
+select * from EMPLOYEE where EMP_NAME like '![A-M]%'
+
+--Q. Find out only those names which start with A and ends with T?
+--Q. display only those names which have '_' in between ? for ex: AMIT_PATIL
+
+--CLASS-10
+--SQL Aggregate Function
+--SQL Aggregate Functions return a single value , Calculated from values in a single column.
+--Below are some of the functions in SQL 
+--1.Avg()
+--2.Count()
+--3.MIN()
+--4.MAX()
+--5.SUM()
+
+--1.AVG()
+--This function is used to find average value of column from table.
+
+--synatx:
+--select AVG(Column_Name) from TABLE_NAME where condition
+
+select AVG(salary) as AVGSAL from EMPLOYEE 
+
+select AVG(salary) as AVGSAL from EMPLOYEE where DEPT = 'DEV'
+
+--2.count()
+--Count() function returns number of rows that matches specified condition.
+--Count() function always requires 1 argument.
+
+--synatx:
+--select Count(Column_Name) from TABLE_NAME where condition
+
+select * from EMPLOYEE
+--selecting all the records from table.
+select COUNT(*) as NumberofRecords from EMPLOYEE where DEPT= 'Testing'
+
+--selecting column name 
+select COUNT(DEPT) as Deptcount  from EMPLOYEE
+
+select Count('SCODEEN') --O/P = 1
+
+select COUNT(12345678) --O/P = 1
+
+select COUNT(1) + COUNT(12345678) -- O/P = 2
+
+select COUNT ('1','2','3') --O/P = The COUNT function requires 1 argument(s).
+
+select COUNT() + COUNT(9876543) --O/P = The COUNT function requires 1 argument(s).
+
+--Q.Count no of employees in testing departement?
+
+--3.MIN()
+--MIN() function returns smallest value of selected column either it may be alphabet or number.
+
+--synatx:
+--select MIN(Column_Name) from TABLE_NAME where condition
+
+select * from EMPLOYEE order by Salary
+--First Minimum Salary
+select MIN(Salary) as MINSAL from EMPLOYEE
+
+select * from EMPLOYEE order by EMP_NAME
+select MIN(EMP_NAME) as MINSAL from EMPLOYEE
+
+--second Minimum salary
+select MIN(Salary) as SecondMINSAL from EMPLOYEE where Salary > 3000
+
+select MIN(Salary) as SecondMINSAL from EMPLOYEE where Salary > (select MIN(Salary) as MINSAL from EMPLOYEE)
+
+--Subquery
+--writing query inside query then we call it as Subquery.
+
+--third minimum salary
+select * from EMPLOYEE order by Salary
+select MIN(Salary)  as ThridMinSAL from EMPLOYEE where Salary > 4000
+
+select MIN(Salary)  as ThridMinSAL from EMPLOYEE where Salary > 
+(select MIN(Salary) as SecondMINSAL from EMPLOYEE where Salary > (select MIN(Salary) as MINSAL from EMPLOYEE))
+
+--4.MAX()
+--MAX() function returns largest value of selected column either it may be alphabet or number.
+
+--synatx:
+--select MAX(Column_Name) from TABLE_NAME where condition
+
+select * from EMPLOYEE order by Salary desc
+--1st max Salary
+select MAX(salary) as MAXSAL from EMPLOYEE 
+
+--2nd Max salary 
+select MAX(Salary) as secondMax from EMPLOYEE where Salary < (select MAX(salary) as MAXSAL from EMPLOYEE)
+
+--3rd max salary
+select MAX (salary) as ThirdMaxSAL  from EMPLOYEE where Salary <
+(select MAX(Salary) as secondMax from EMPLOYEE where Salary < (select MAX(salary) as MAXSAL from EMPLOYEE))
+
+--TOP
+--TOP Clause is used to specify the number of records to be return from table.
+--TOP clause is useful when we are dealing with lakhs of records from table.
+
+--synatx: 
+--select TOP number / percent column_names or * from TABLE_NAME 
+--where condition
+
+select Top 5 * from EMPLOYEE
+
+select Top 80 PERCENT * from EMPLOYEE
+
+select Top 5 Salary from EMPLOYEE 
+
+select Top 5 Salary from EMPLOYEE order by Salary
+
+select Top 80 PERCENT Salary from EMPLOYEE
+
+--third highest salary
+select * from EMPLOYEE order by Salary desc --8000
+
+select MIN(salary) as ThirdMAXSAL from EMPLOYEE where Salary in --(9500,9000,8000)
+(select top 3 salary from EMPLOYEE order by Salary desc)
+
+--64th highest salary 
+
+--third minimum salary
+select MAX(salary) as ThirdMinSAL from EMPLOYEE where Salary in 
+(select Top 3 salary from EMPLOYEE order by Salary asc)
+
+--5.SUM
+--Sum() function returns the total sum of numeric value from column.
+--Sum() function always accept numeric values.
+
+--synatx:
+--select SUM(Column_Name) from TABLE_NAME where condition
+
+select * from EMPLOYEE
+
+select SUM(Salary) as TotalSalary from EMPLOYEE
+
+--sumof salary for a particular department
+select SUM(Salary) as TotalSalary from EMPLOYEE where DEPT = 'Testing'
+
+--CLASS-11
+--Distinct

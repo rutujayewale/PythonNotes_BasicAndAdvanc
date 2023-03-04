@@ -1,0 +1,131 @@
+                                      Functions:-
+                                      ---------
+If a group statements is repeatadly required then it's not recommended to write these statements everytime separetly, We have to define these statements as a single unit and we call that unit any number of times based on our
+requirement without rewriting the code. These single unit is called Function.
+
+
+Adv:- Reusabilty,Time consume, Length of code Reduce
+
+There are 2 types of Function in Python
+
+1.Inbuild Function :- 
+
+The function which are coming alsong with python s/w automatically are called inbuilt function.
+
+id()
+type()
+print()
+dir()
+help()
+bin()
+list()
+
+
+2.User Define Function:-
+
+The function which are developed by programmer explicitly according to the bussiness logic requirement are called user define function.
+
+
+syntax:-
+
+def function_name(parameters):
+	""" doc string """
+
+	------
+	------
+	------(business logic)
+	
+	return values
+
+
+In function use 2 keywords.
+
+1.def:- creating function
+2.return :- return value of logic
+--------------------------------------------
+def wish():
+    print("Good morning")
+
+#call the function
+
+wish()
+wish()
+wish()
+wish()
+
+ans:-
+Good morning
+Good morning
+Good morning
+Good morning
+
+
+ex:- 2
+
+
+def std_cal(a,b):
+    sum = a+b
+    sub = a-b
+    mul = a*b
+    div = a/b
+
+    print('sum:-',sum,'sub:-',sub,'mul:-',mul,'div:-',div)
+
+std_cal(20,10)
+std_cal(56,12)
+std_cal(89,34)
+
+
+ans:-
+
+sum:- 30 sub:- 10 mul:- 200 div:- 2.0
+sum:- 68 sub:- 44 mul:- 672 div:- 4.666666666666667
+sum:- 123 sub:- 55 mul:- 3026 div:- 2.6176470588235294
+
+
+Parameters:-
+----------
+
+Parameters are inputs to the fucntion. If a functions contains parametes then at the time of calling compulsory we should provide values, otherwise we will get error.
+
+Note:- If you provide two parameters, at the time of calling you must be provide two parametes as per value, One less or extra not required.
+
+def std_cal(a,b):
+    sum = a+b
+    sub = a-b
+    mul = a*b
+    div = a/b
+
+    print('sum:-',sum,'sub:-',sub,'mul:-',mul,'div:-',div)
+
+std_cal()
+
+Note:- Paramete want two, but at the time calling it's empty.
+
+error :- TypeError: std_cal() missing 2 required positional arguments: 'a' and 'b'
+
+----------------------------------------------------
+def std_cal(a,b):
+    sum = a+b
+    sub = a-b
+    mul = a*b
+    div = a/b
+
+    print('sum:-',sum,'sub:-',sub,'mul:-',mul,'div:-',div)
+
+std_cal(67)
+Note:- Paramete want two, but at the time calling it's just 1.
+
+error:- TypeError: std_cal() missing 1 required positional argument: 'b'
+---------------------------------------
+def std_cal(a,b):
+    sum = a+b
+    sub = a-b
+    mul = a*b
+    div = a/b
+
+    print('sum:-',sum,'sub:-',sub,'mul:-',mul,'div:-',div)
+
+std_cal(67,89,90)
+
+error:- TypeError: std_cal() takes 2 positional arguments but 3 were given

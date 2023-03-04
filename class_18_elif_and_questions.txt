@@ -1,0 +1,67 @@
+3.if-elif-else:-
+
+More than one condition this time using elif :- (elseif)
+
+if condition_1:
+	statement_1
+elif condition_2:
+	statement_2
+elif condition_3:
+	statement_3
+
+else:
+	statement_4
+
+ex:-
+
+if brand == "Horlicks":
+    print("Yaah.. It's very old brand")
+elif brand == "Bornvita":
+    print("Secret of energy")
+elif brand == "Complain":
+    print("I am the complain boy")
+elif brand == "Booster":
+    print("VK Brand")
+else:
+    print("Go to Daru Center")
+
+
+ ex:-
+
+ a = int(input("Enter ur 1st no:-"))
+b = int(input("Enter ur 2nd no:-"))
+c = int(input("Enter ur 3rd no:-"))
+
+if a>b and a>c:
+    print(a,'is biggest no:-')
+elif b>c:
+    print(b,'is biggest no:-')
+else:
+    print(c,'is biggest no:-')
+
+
+ # 1.Write a Program if number is float then add with another no.
+
+'''a = 10
+b = eval(input("Enter your no:-"))
+
+if type(b)== float:
+    result = a+b
+    print(result)'''
+
+
+# 2.Write a program if element is set then add in a list in 2nd index.
+
+'''a = [56,78,90,54,34,12]
+b = eval(input("Enter your no:-"))
+
+if type(b)== set:
+    a.insert(2,b)
+    print(a)'''
+
+# 3.Write a Program check data is a tuple or not.
+
+
+Hw:-
+
+WAP for number is even or odd?

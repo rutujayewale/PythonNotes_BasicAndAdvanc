@@ -1,0 +1,101 @@
+Selenium Interview Questions:-
+--------------------------------
+
+1. Write Selenium Xpath
+	> Absolute and Relative 
+		> Ansolute
+
+		https://www.decathlon.in/search?query=tshirt - green check box (without use indexing) l1/l2
+
+2.How many locaters in selenium, explain about it. l1/l2
+Ans=
+1]id
+2]Classname
+3]css selector
+4]tagname
+5]linktext
+6]partiallink text
+7]xpath
+8]name
+
+3.Explain About selenium wait. l1/l2
+Ans=
+wait command in selenium is very important for execution automates test cript.
+The wait commands are essential when it comes to executing Selenium tests.
+They help to observe and troubleshoot issues that may occur due to variation in time lag.
+While running Selenium tests, it is common for testers to get the message “Element Not Visible Exception“.
+there are two types of wait in selenium
+1] implicity wait
+2]explicity wait
+
+
+4. How to do static dropdown? l1
+Ans=
+We can select an option in a static dropdown in Selenium webdriver. 
+Selenium can handle static dropdowns with the help of the Select class.
+we can select static dropdown with the hepl of 
+a]select.by_visible_text()
+b]select.by_value()
+c]select.by_index()
+
+5. How you identify auto suggestive drop down. l2
+
+6. How to click snap shot in selenium. l1
+
+
+7. are you handel any alret,pop up or captcha? l2
+
+8. Selenium Component? l2
+
+9. What is selenium webdriver, expalin about yout tought. l1/l2
+
+10. How can we get text of a web element? l1
+
+11.what are the differenet way of selecting the values in dropdown? l1
+
+13. deiver.quiet vs driver.close() l1
+Ans=
+quite will close all window at a time
+close will close single window att a time 
+
+14.how to do handel multuple window? l1/l2
+Ans=
+we have a method driver.current_windo_handle with the help of this method we will get single windo id
+and for multilple window id we have another method which is driver.window
+we can handle multiple windo with the help of driver.switch_to.window
+
+
+
+15. findelement vs findelements? l2
+Ans=
+findElement: A command to uniquely identify a web element within the web page.
+findElements: A command to identify a list of web elements within the web page.
+
+
+16. What Action class in selenium? l1
+
+17. what are switch class in selenium? l1
+
+18. A--->  B----> C  ----> A iframe l2/l1
+
+19.driver.refersh() vs driver.back() vs driver.forward() l1
+it is navigation command
+navigates to the page by changing the URL like doing forward/backward navigation.
+driver.refresh= we can refresh current window with the help of this method
+driver.back= we can go one window back with thw help of driver.back
+driver.forword= we can go on next window
+
+20. What is selenium navigation/navigate , explain about it. l2
+navigate .forword refresh,back 
+
+21. css_seletor nth -child? l1
+css_selector index
+
+22. link text vs partial text l1
+Ans=
+thise two locatore to identify the links bcz most of the time we can not see any alement name,id for the link
+in partial link we no need to pass complete values but in link text we need to pass complete value.
+
+Selenium notes python files:-
+----------------------------
+https://github.com/ChandraSekharNayak-AT-Py/SeleniumAutomationPythonFiles.git

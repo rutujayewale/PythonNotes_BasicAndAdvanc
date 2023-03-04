@@ -1,0 +1,107 @@
+Writing data to text files:-
+---------------------------
+we can write character data to the text files by using 2 methods
+
+1.write(str)
+2.writelines(list of lines)
+
+write:-
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()
+
+override
+--------
+if in a file some data are exits then new data in write mode was override pervious data.
+
+'''f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()'''
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+f.write("Name of file")
+
+
+
+2.writelines
+------------
+
+contain the data from list of string.
+
+#writelines
+
+f= open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","w")
+list = ["Swadhin\n ","Swagat\n"," Chiiny\n ","Mukesh\n"]
+f.writelines(list)
+f.close()
+
+Note:-While write data by using write() methods,compulsory we have to provide line separator(\n),otherwise total data should be written to a single line..
+
+
+Writing data to text files but in Append(a) mode:-
+-----------------------------------------------
+
+Open a file,append is won't override exitsing data.if the specified file is not avaialble then append mode create a new file.
+
+1.write(str)
+2.writelines(list of string)
+
+
+f = open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","a")
+f.write("\n \n \n")
+f.write("Scodeen is best\n")
+f.write("Mode in which file is opened\n")
+f.write("readable\n")
+print("Successfully")
+f.close()
+
+
+Closing a File:-
+
+After completing our operations on the file,It is highly recommended to close file,Otherwise when we will use this on onther program it's returns the error,For this we have to use close()
+
+variable.close()
+
+
+The with statement:-
+------------------
+
+The with statement can be used while oprning a file,we can use this to group file operation statements within a block.
+
+Note:-
+
+The advantage of with statement is it will take care closing of file,after completing all opeartions automatically even in the case of exception also,we are not required to close explicitly.
+
+syntax:-
+
+with open("file_path","mode") as variable_name:
+    
+    statements
+
+ex:-
+
+with open("D:\\SCODEEN\\testing_17_18_python\\abc.txt","r") as f:
+    data = f.read()
+    print(data)
+    print("is file Closed:-", f.closed)
+
+print("is file Closed:-",f.closed)
+
+
+Handeling Binary Data:-
+-------------------- 
+
+It is very common requirement to read or write binary data like image,video dile, audio etc//
+
+gents = open('D:\\SCODEEN\\T_39E_40\\gents.jpg','rb')
+ladies = open('D:\\SCODEEN\\T_39E_40\\ladies.jpg','wb')
+gents_binary_code = gents.read()
+ladies.write(gents_binary_code)
+print(gents_binary_code)

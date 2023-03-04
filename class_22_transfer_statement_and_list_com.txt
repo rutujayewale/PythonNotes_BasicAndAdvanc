@@ -1,0 +1,129 @@
+Transfer Statement:-
+------------------
+
+break, continue, pass
+
+break:- we can use break statement inside loop to break loop executation based on some condition
+
+
+for i in range(1,11):
+    if i == 7:
+        break
+    print(i)
+
+ans:-
+
+1
+2
+3
+4
+5
+6
+
+li = [107,207,170,300,320,500,45,32]
+
+for i in li:
+    if i>=300:
+        break
+    print(i+50)
+
+ ans:-
+
+ 157
+257
+220
+
+n = int(input("Enter your number"))
+m = int(input("Enter your number"))
+for i in range(1,n+1):
+    if i == m+1:
+        break
+    for j in range (1,i+1):
+        print('*',end='')
+    print()
+
+
+continue:- We can use continue statement to skip current iteration and continue next iterartion.
+
+
+ for i in range(1,11):
+     if i%2==0:
+         continue
+     print(i)
+
+ans:-
+
+1
+3
+5
+7
+9
+
+li = [107,207,170,300,320,500,45,32]
+
+for i in li:
+    if i>= 300:
+        continue
+    print(i+50)
+
+ Ans:- 
+
+ 157
+257
+220
+95
+82
+
+
+pass:-  In pur programming syntatocally if block is required which won't do anything then we can define empty block by using pass keyword.
+
+for i in range(10):
+    pass
+
+ def m1():
+    pass
+
+
+
+
+Comprehension:-
+--------------
+
+List comprehension:-
+------------------
+
+It is very easy and compact way of creating list obj from any iterable obj(list,tuple,set,dict,range) based on some condition
+
+syntax:-
+
+var = [ expression for i in list/tuple/set/range/str if condition]
+
+
+ex:-
+#squre of every elemt
+
+li = [i*i for i in range(1,11)]
+print(li)
+
+#print even no 1 to 20 in list using list com
+
+li = [i for i in range(1,21) if i%2==0]
+print(li)
+
+[2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+
+
+
+Dictionary Comprehension:-
+----------------------
+
+#{1:1,2:4,3:9,4:16}
+n = int(input("Enter your no."))
+squre = {i:i*i for i in range(1,n+1)}
+print(squre)
+
+
+
+n = int(input("Enter your no."))
+squre = {i:i**0.5 for i in range(1,n+1)}
+print(squre)

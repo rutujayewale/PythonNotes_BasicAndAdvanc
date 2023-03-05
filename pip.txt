@@ -1,2 +1,16 @@
 pip install pytest==7.1.2
-python.exe -m pip install --upgrade pip
+python.exe -m pip install --upgrde pip
+
+
+
+we are using pip wjith pytest selenium
+selenium with python
+
+
+python 
+selenium
+pip
+BA
+mongodb
+unix
+sql

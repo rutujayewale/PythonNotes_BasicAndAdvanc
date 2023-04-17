@@ -59,5 +59,7 @@ It's always delets old same variable objects,Hence the main object of Garbage co
 
 camel casing="RUTUJA YEWALE"
 snake casing="rutuja yewale"
+age ="23"
+city="Pune"
 
 

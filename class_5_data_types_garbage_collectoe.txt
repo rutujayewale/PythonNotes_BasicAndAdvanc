@@ -57,9 +57,6 @@ This assiatant is nothing but Garbage Collector.
 It's always delets old same variable objects,Hence the main object of Garbage collector is to destroy useless objects.
 
 
-camel casing="RUTUJA YEWALE"
-snake casing="rutuja yewale"
-age ="23"
-city="Pune"
+
 
 
